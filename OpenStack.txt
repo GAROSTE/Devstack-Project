@@ -1,0 +1,77 @@
+OpenStack : http://10.194.188.59
+
+MDP : VxDG7NwT94ew92HoqOyAoLbiVAy6g9ww
+
+command : 
+
+At this time use the beta channel:
+
+"sudo snap install microstack --beta"
+Information on the installed snap can be viewed like this:
+
+"snap list microstack"
+Name        Version  Rev  Tracking     Publisher   Notes
+microstack  ussuri   245  latest/beta  canonical✓  -
+Here we see that OpenStack Ussuri has been deployed!
+
+"sudo microstack init --auto --control"
+
+
+root@scw-sweet-OpenStack:~# microstack.openstack catalog list
++-----------+-----------+----------------------------------------------------------------------------+
+| Name      | Type      | Endpoints                                                                  |
++-----------+-----------+----------------------------------------------------------------------------+
+| nova      | compute   | microstack                                                                 |
+|           |           |   public: https://10.194.188.59:8774/v2.1                                  |
+|           |           | microstack                                                                 |
+|           |           |   internal: https://10.194.188.59:8774/v2.1                                |
+|           |           | microstack                                                                 |
+|           |           |   admin: https://10.194.188.59:8774/v2.1                                   |
+|           |           |                                                                            |
+| neutron   | network   | microstack                                                                 |
+|           |           |   admin: https://10.194.188.59:9696                                        |
+|           |           | microstack                                                                 |
+|           |           |   public: https://10.194.188.59:9696                                       |
+|           |           | microstack                                                                 |
+|           |           |   internal: https://10.194.188.59:9696                                     |
+|           |           |                                                                            |
+| glance    | image     | microstack                                                                 |
+|           |           |   public: https://10.194.188.59:9292                                       |
+|           |           | microstack                                                                 |
+|           |           |   internal: https://10.194.188.59:9292                                     |
+|           |           | microstack                                                                 |
+|           |           |   admin: https://10.194.188.59:9292                                        |
+|           |           |                                                                            |
+| placement | placement | microstack                                                                 |
+|           |           |   admin: https://10.194.188.59:8778                                        |
+|           |           | microstack                                                                 |
+|           |           |   internal: https://10.194.188.59:8778                                     |
+|           |           | microstack                                                                 |
+|           |           |   public: https://10.194.188.59:8778                                       |
+|           |           |                                                                            |
+| keystone  | identity  | microstack                                                                 |
+|           |           |   public: https://10.194.188.59:5000/v3/                                   |
+|           |           | microstack                                                                 |
+|           |           |   internal: https://10.194.188.59:5000/v3/                                 |
+|           |           | microstack                                                                 |
+|           |           |   admin: https://10.194.188.59:5000/v3/                                    |
+|           |           |                                                                            |
+| cinderv2  | volumev2  | microstack                                                                 |
+|           |           |   internal: https://10.194.188.59:8776/v2/ce47496ba9e24a9ca0367a3b79dd4ba7 |
+|           |           | microstack                                                                 |
+|           |           |   admin: https://10.194.188.59:8776/v2/ce47496ba9e24a9ca0367a3b79dd4ba7    |
+|           |           | microstack                                                                 |
+|           |           |   public: https://10.194.188.59:8776/v2/ce47496ba9e24a9ca0367a3b79dd4ba7   |
+|           |           |                                                                            |
+| cinderv3  | volumev3  | microstack                                                                 |
+|           |           |   admin: https://10.194.188.59:8776/v3/ce47496ba9e24a9ca0367a3b79dd4ba7    |
+|           |           | microstack                                                                 |
+|           |           |   public: https://10.194.188.59:8776/v3/ce47496ba9e24a9ca0367a3b79dd4ba7   |
+|           |           | microstack                                                                 |
+|           |           |   internal: https://10.194.188.59:8776/v3/ce47496ba9e24a9ca0367a3b79dd4ba7 |
+|           |           |                                                                            |
++-----------+-----------+----------------------------------------------------------------------------+
+
+
+ snap get microstack config.credentials.keystone-password
+
