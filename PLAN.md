@@ -34,6 +34,16 @@ Certains composants requièrent d'avoir au préalable d'autres composants déjà
 
 4/ Swift, 
 
+## **<u>3.*Déploiement du cloud Openstack*</u>**
+
+Afin de déployer notre cloud Openstack nous utiliserons Devstack. En effet Devstack est une série de scripts facilitant le déploiement d'un Openstack avec les modules dont nous avons besoin. Nous pouvons ensuite installer des modules un peu plus avancés.
+
+
+
+## **<u>4.*Déploiement de notre infrastructure via Terraform*</u>**
+
+Une fois notre cloud déployé, nous devons maintenant mettre en place l'infrastructure. Le but final ici, sera donc de déployer l'infrastructure via de "l'infrastructure as code" avec notamment Terraform. Cette étape permettra d'automatiser la création de ressources (VMs, BDD etc) afin de faciliter la mise en place de notre infrastructure dans Openstack.
+
 
 
 
