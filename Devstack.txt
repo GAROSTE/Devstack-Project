@@ -1,0 +1,98 @@
+=========================
+DevStack Component Timing
+ (times are in seconds)
+=========================
+wait_for_service      12
+async_wait           210
+osc                  160
+apt-get              298
+test_with_retry        6
+dbsync                15
+pip_install          207
+apt-get-update         1
+run_process           27
+git_timed            104
+-------------------------
+Unaccounted time     232
+=========================
+Total runtime        1272
+
+=================
+ Async summary
+=================
+ Time spent in the background minus waits: 413 sec
+ Elapsed time: 1272 sec
+ Time if we did everything serially: 1685 sec
+ Speedup:  1.32469
+
+
+Post-stack database query stats:
++------------+-----------+-------+
+| db         | op        | count |
++------------+-----------+-------+
+| keystone   | SELECT    | 41589 |
+| keystone   | INSERT    |    97 |
+| glance     | SELECT    |  1009 |
+| glance     | CREATE    |    65 |
+| glance     | INSERT    |   255 |
+| glance     | SHOW      |     8 |
+| glance     | UPDATE    |    13 |
+| glance     | ALTER     |    10 |
+| glance     | DROP      |     3 |
+| neutron    | SELECT    |  4638 |
+| neutron    | CREATE    |   319 |
+| neutron    | SHOW      |    39 |
+| cinder     | SELECT    |   211 |
+| cinder     | SHOW      |     1 |
+| cinder     | CREATE    |    74 |
+| cinder     | SET       |     1 |
+| cinder     | ALTER     |    18 |
+| neutron    | INSERT    |  1309 |
+| neutron    | UPDATE    |   244 |
+| neutron    | ALTER     |   150 |
+| neutron    | DROP      |    52 |
+| neutron    | DELETE    |    26 |
+| nova_cell1 | SELECT    |   295 |
+| nova_cell1 | SHOW      |    60 |
+| nova_cell1 | CREATE    |   210 |
+| nova_cell0 | SELECT    |   338 |
+| nova_cell0 | SHOW      |    60 |
+| nova_cell0 | CREATE    |   210 |
+| nova_cell1 | ALTER     |     2 |
+| nova_cell0 | ALTER     |     2 |
+| placement  | SELECT    |    58 |
+| placement  | INSERT    |    58 |
+| placement  | SET       |     3 |
+| nova_api   | SELECT    |   116 |
+| nova_cell0 | INSERT    |    10 |
+| placement  | UPDATE    |     3 |
+| cinder     | INSERT    |     5 |
+| nova_cell0 | UPDATE    |    93 |
+| nova_cell1 | UPDATE    |    66 |
+| nova_cell1 | INSERT    |     6 |
+| cinder     | UPDATE    |    22 |
+| nova_api   | INSERT    |    20 |
+| nova_api   | SAVEPOINT |    10 |
+| nova_api   | RELEASE   |     7 |
+| cinder     | DELETE    |     1 |
+| keystone   | DELETE    |     7 |
++------------+-----------+-------+
+
+
+
+This is your host IP address: 10.194.197.3
+This is your host IPv6 address: 2001:bc8:700:2b01::1
+Horizon is now available at http://10.194.197.3/dashboard
+Keystone is serving at http://10.194.197.3/identity/
+The default users are: admin and demo
+The password: secret
+
+Services are running under systemd unit files.
+For more information see:
+https://docs.openstack.org/devstack/latest/systemd.html
+
+DevStack Version: 2023.1
+Change: 448036a6ad382cebcf9df15f717e259479be4965 Merge "Add RBAC scope and new defaults setting support for Nova & Tempest" 2022-11-15 12:17:46 +0000
+OS Version: Ubuntu 22.04 jammy
+
+2022-11-17 14:56:10.062 | stack.sh completed in 1273 seconds.

@@ -1,0 +1,33 @@
+sudo apt-get update && sudo apt-get upgrade -y	
+
+sudo useradd -s /bin/bash -d /opt/stack -m stack
+
+	
+echo "stack ALL=(ALL) NOPASSWD: ALL" | sudo tee /etc/sudoers.d/stack
+
+	
+sudo su - stack
+
+	
+git clone https://opendev.org/openstack/devstack
+
+	
+cd devstack
+
+	
+nano local.conf
+
+[[local|localr]]
+ 
+ADMIN_PASSWORD=StrongAdminSecret
+DATABASE_PASSWORD=$ADMIN_PASSWOCinder
+RABBIT_PASSWORD=$ADMIN_PASSWORD
+SERVICE_PASSWORD=$ADMIN_PASSWORD
+
+
+	
+./stack.sh
+
+
+	
+https://server-ip/dashboard
